@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Student Registration & Result Management</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <h1>Student Registration & Result Management</h1>
+  <p>Enter details and marks. The result is calculated, shown, and saved in your browser.</p>
+</header>
+
+<main>
+<section aria-labelledby="fh">
+  <h2 id="fh">Student details</h2>
+  <form id="form" novalidate>
+    <div class="grid">
+      <div class="full"><label for="name">Full name</label><input id="name" autocomplete="off"><div class="err" id="e-name"></div></div>
+      <div><label for="roll">Roll number</label><input id="roll" autocomplete="off"><div class="err" id="e-roll"></div></div>
+      <div><label for="cls">Class</label>
+        <select id="cls"><option value="">Select class</option><option>8</option><option>9</option><option>10</option><option>11</option><option>12</option></select>
+        <div class="err" id="e-cls"></div></div>
+      <div><label for="email">Email</label><input id="email" type="email" autocomplete="off"><div class="err" id="e-email"></div></div>
+      <div><label for="phone">Phone (10 digits)</label><input id="phone" inputmode="numeric" maxlength="10" autocomplete="off"><div class="err" id="e-phone"></div></div>
+    </div>
+    <fieldset>
+      <legend>Marks out of 100</legend>
+      <div class="grid" id="marks"></div>
+    </fieldset>
+    <div class="actions">
+      <button type="submit">Calculate and save</button>
+      <button type="reset" class="ghost" id="reset">Clear form</button>
+    </div>
+  </form>
+</section>
+
+<section aria-labelledby="rh" aria-live="polite">
+  <h2 id="rh">Result</h2>
+  <div id="result"><div class="empty">Submit the form to see the marksheet here.</div></div>
+</section>
+
+<section class="wide" aria-labelledby="sh">
+  <h2 id="sh">Saved students</h2>
+  <div class="stats" id="stats"></div>
+  <div class="tw"><table id="tbl"></table></div>
+  <div class="actions"><button class="danger small" id="clearAll">Delete all records</button></div>
+  <h2 style="margin-top:20px">Stored JSON <span class="meta" style="font-weight:400">(key: students)</span></h2>
+  <pre id="json">[]</pre>
+</section>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
